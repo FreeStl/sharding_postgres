@@ -1,0 +1,35 @@
+version: '3.1'
+services:
+
+  main:
+    image: postgres
+    container_name: main
+    restart: always
+    environment:
+      POSTGRES_PASSWORD: example
+    ports:
+      - "5432:5432"
+
+  otherone:
+    image: postgres
+    container_name: otherone
+    restart: always
+    environment:
+      POSTGRES_PASSWORD: example
+    ports:
+      - "5433:5432"
+
+  othertwo:
+    image: postgres
+    container_name: othertwo
+    restart: always
+    environment:
+      POSTGRES_PASSWORD: example
+    ports:
+      - "5434:5432"
+
+  adminer:
+    image: adminer
+    restart: always
+    ports:
+      - "8080:8080"
